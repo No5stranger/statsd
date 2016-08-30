@@ -307,11 +307,6 @@ class Client
         } catch (\Exception $e) {
             if ($this->throwConnectionExceptions) {
                 throw new ConnectionException($this, '(' . $errno . ') ' . $errstr);
-            } else {
-                trigger_error(
-                    sprintf('StatsD server connection failed (udp://%s:%d)', $this->host, $this->port),
-                    E_USER_WARNING
-                );
             }
         }
     }
