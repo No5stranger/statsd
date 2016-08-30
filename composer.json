@@ -1,18 +1,24 @@
 {
-    "name": "league/statsd",
-    "description": "A simple library for working with StatsD in PHP.",
+    "name": "eleme/statsd",
+    "description": "A simple library for working with StatsD in PHP. Base on league/statsd",
     "keywords": [
         "library",
         "statsd",
         "graphite"
     ],
-    "homepage": "https://github.com/thephpleague/statsd",
+    "homepage": "https://github.com/No5stranger/statsd",
     "license": "MIT",
     "authors": [
         {
             "name": "Marc Qualie",
             "email": "marc@marcqualie.com",
             "homepage": "http://marcqualie.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Jianpei Chen",
+            "email": "No5stranger@gmail.com",
+            "homepage": "https://www.ele.me",
             "role": "Developer"
         }
     ],

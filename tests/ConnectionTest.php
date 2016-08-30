@@ -52,7 +52,7 @@ class ConnectionTest extends TestCase
         $this->client->increment('test');
         restore_error_handler();
 
-        $this->assertTrue($handlerInvoked);
+        $this->assertFalse($handlerInvoked);
     }
 
     public function testTimeoutDefaultsToPhpIniDefaultSocketTimeout()
