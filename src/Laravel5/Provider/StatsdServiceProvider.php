@@ -45,27 +45,9 @@ class StatsdServiceProvider extends ServiceProvider
     {
         $this->app['statsd'] = $this->app->share(
             function ($app) {
-                // Set Default host and port
-                $options = array();
-                if (isset($app['config']['statsd.host'])) {
-                    $options['host'] = $app['config']['statsd.host'];
-                }
-                if (isset($app['config']['statsd.port'])) {
-                    $options['port'] = $app['config']['statsd.port'];
-                }
-                if (isset($app['config']['statsd.namespace'])) {
-                    $options['namespace'] = $app['config']['statsd.namespace'];
-                }
-                if (isset($app['config']['statsd.timeout'])) {
-                    $options['timeout'] = $app['config']['statsd.timeout'];
-                }
-                if (isset($app['config']['statsd.throwConnectionExceptions'])) {
-                    $options['throwConnectionExceptions'] = $app['config']['statsd.throwConnectionExceptions'];
-                }
-
-                // Create
                 $statsd = new Statsd();
-                $statsd->configure($options);
+                $config = $app['config'];
+                $statsd->configure(isset($config['statsd']) ? $config['statsd'] : array());
                 return $statsd;
             }
         );
